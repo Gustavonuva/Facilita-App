@@ -6,15 +6,15 @@ import NavbarOptions from "./components/Navbar/NavbarOptions.vue";
 
 const app = createApp(App);
 
-const routes = [
-  { path: "/", name: "dashboard" },
-];
+const routes = [{ path: "/", name: "dashboard" }];
+
 const router = createRouter({
   history: createWebHistory(),
   routes,
 });
 
 app.component("MyNavbar", NavbarOptions);
+
 app.use(router);
 
 app.mount("#app");
