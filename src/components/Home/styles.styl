@@ -1,0 +1,58 @@
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  font-size: 12px;
+  width: 550px;
+  display: flex
+  justify-content: center
+  flex-direction: column
+}
+
+.textDecoration span {
+  color: #2693ff;
+  font-weight: bold;
+}
+
+.search-box {
+  width: 100%;
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.search-box .search-text {
+  width: 100%;
+  padding: 15px 40px 15px 15px; 
+  border-radius: 3px;
+  border: 2px solid #a6c1d2;
+  transition: border-color 0.3s;
+  background: none;
+  box-sizing: border-box; 
+}
+
+.search-box .search-text::placeholder {
+  color: #a6c1d2;
+  font-size: 15px;
+}
+
+.search-box .search-text:focus {
+  border: 2px solid #5b7688;
+  outline: none;
+}
+
+.search-box::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background: url("@/assets/svg/lupa.svg") no-repeat center center;
+  background-size: contain;
+  pointer-events: none; 
+}
