@@ -1,6 +1,6 @@
 <template>
   <div class="containerCard">
-    <div v-for="(task, index) in filteredTasks" :key="index" class="box">
+    <div v-for="(task, index) in getSortedTasks" :key="index" class="box">
       <input
         type="checkbox"
         :id="'checkbox' + task.id"
@@ -68,7 +68,7 @@
             </button>
           </div>
         </div>
-    </div>
+      </div>
     </div>
   </div>
 </template>
@@ -177,7 +177,7 @@ export default {
     },
     editTask() {
       this.modalOpen = true;
-      this.menuOpen = false; 
+      this.menuOpen = false;
     },
     closeModal() {
       this.modalOpen = false;
@@ -227,7 +227,6 @@ export default {
       return tasks ? JSON.parse(tasks) : [];
     },
     closeMenuOnClickOutside(event) {
-      
       if (this.$el && !this.$el.contains(event.target)) {
         this.selectedTask = null;
         this.menuOpen = false;
